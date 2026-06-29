@@ -20,4 +20,21 @@ document.addEventListener("DOMContentLoaded", () => {
             section.style.transform = 'translateX(0)';
         });
     });
+
+    // ==========================================
+    // 3. [เพิ่มใหม่] DOM + Event: เปลี่ยนรูปโปรไฟล์เมื่อเมาส์ชี้ (Hover Image)
+    // ==========================================
+    const profileImg = document.getElementById('profile-img');
+
+    if (profileImg) {
+        // เมื่อเมาส์ชี้ที่รูป -> เปลี่ยน src เป็น pea.png
+        profileImg.addEventListener('mouseenter', () => {
+            profileImg.src = 'pea.jpg';
+        });
+
+        // เมื่อเมาส์ออกจากรูป -> เปลี่ยน src กลับเป็น pic.png (หรือรูปเริ่มต้นของคุณ)
+        profileImg.addEventListener('mouseleave', () => {
+            profileImg.src = 'jitphanu.png'; 
+        });
+    }
 });
