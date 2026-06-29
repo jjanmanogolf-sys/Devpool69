@@ -31,11 +31,11 @@ document.addEventListener("DOMContentLoaded", () => {
     if (profileImg) {
         profileImg.style.transition = 'all 0.3s ease';
         profileImg.addEventListener('mouseenter', () => {
-            profileImg.src = 'pea.jpg';
+            profileImg.src = 'pic/pea.jpg';
             profileImg.style.transform = 'scale(1.03)'; // เพิ่มการขยายเล็กน้อยให้ดูมีมิติ
         });
         profileImg.addEventListener('mouseleave', () => {
-            profileImg.src = 'jitphanu.png'; 
+            profileImg.src = 'pic/jitphanu.png'; 
             profileImg.style.transform = 'scale(1)';
         });
     }
