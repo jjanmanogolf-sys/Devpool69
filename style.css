@@ -202,6 +202,39 @@ body {
     color: #2b175c;
     margin: 3px 0 7px 0;
 }
+/* ตั้งค่าให้ปุ่ม Contact รองรับการใส่ไอคอนทางขวา */
+.contact-section p.copyable {
+    position: relative;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    padding-right: 30px; /* เว้นพื้นที่ด้านขวาไว้สำหรับไอคอน Copy */
+    display: flex;
+    align-items: center;
+}
+
+/* เอฟเฟกต์เมื่อเมาส์ชี้: ให้ตัวหนังสือสว่างขึ้นเล็กน้อย */
+.contact-section p.copyable:hover {
+    color: #8c00ff; /* เปลี่ยนเป็นสีเหลืองทองเวลาชี้เพื่อให้รู้ว่ากดได้ */
+}
+
+/* สร้างไอคอน Copy จำลองไว้ด้านหลังข้อความ (เริ่มต้นให้ซ่อนไว้) */
+.contact-section p.copyable::after {
+    content: "\f0c5"; /* โค้ดนี้คือรูปสี่เหลี่ยมซ้อนกัน 2 อัน (Copy Icon) */
+    font-family: "Font Awesome 5 Free", "Font Awesome 6 Free", sans-serif; /* เพิ่ม fallback */
+    font-weight: 900; /* จำเป็นต้องใส่ 900 เพื่อให้ฟอนต์แบบ Solid แสดงผล */
+    position: absolute;
+    right: 10px;
+    opacity: 0;
+    transform: scale(0.7);
+    transition: all 0.2s ease;
+    color: #8c00ff; /* สีม่วงตามที่คุณต้องการ */
+}
+
+/* เมื่อเอาเมาส์มา Hover ที่ข้อความ ให้ไอคอน Copy แสดงและขยายขึ้นมา */
+.contact-section p.copyable:hover::after {
+    opacity: 1;
+    transform: scale(1);
+}
 
 /* Responsive สำหรับหน้าจอมือถือ */
 @media (max-width: 768px) {
